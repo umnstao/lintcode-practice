@@ -24,3 +24,5 @@ class Solution:
             self.minSum = localSum
             self.minRoot = root
         return localSum
+
+        # divide and conquer, bottom-up

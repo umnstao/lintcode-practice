@@ -5,21 +5,17 @@ class Solution:
     """
     def permute(self, nums):
         # write your code here
-        if nums == None  :
-            return nums
+        if nums is None:
+            return None
         if len(nums) == 0:
             return [[]]
         ret = []
-        self.helper(nums, ret, [], 0)
+        self.helper(nums, ret, [])
         return ret
-
-    def helper(self, nums, ret, path, index):
+    def helper(self, nums, ret, path):
         if len(path) == len(nums):
             ret.append(path[:])
-
-        for i in range(index, len(nums)):
+        for i in range(len(nums)):
             if nums[i] in path:
                 continue
-            path += [nums[i]]
-            self.helper(nums,ret,path,0)
-            path.pop()
+            self.helper(nums,ret,path + [nums[i]])

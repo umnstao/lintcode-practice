@@ -22,3 +22,5 @@ class Solution:
             self.helper(root.left, ret, path +'->'+str(root.left.val) )
         if root.right:
             self.helper(root.right, ret, path + '->'+ str(root.right.val))
+
+    ## Traversal, top-down

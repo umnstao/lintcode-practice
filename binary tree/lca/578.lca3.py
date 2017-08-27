@@ -40,5 +40,5 @@ class Solution:
             return aExist, bExist, lcaLeft
 
         return aExist, bExist, None
-
+        # divide and conquer, bottom up
 

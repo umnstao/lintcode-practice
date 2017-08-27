@@ -7,7 +7,6 @@ class Solution:
         # write your code here
 
         ret = []
-        S= sorted(S)
         self.helper(S, 0, [], ret)
         return ret
 

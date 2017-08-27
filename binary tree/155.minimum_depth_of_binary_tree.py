@@ -15,12 +15,10 @@ class Solution:
 
         if not root:
             return 0
-        return self.helper(root)
+        if root.left is None:
+            return self.minDepth(root.right) + 1
+        if root.right is None:
+            return self.minDepth(root.left) + 1
+        return min(self.minDepth(root.left), self.minDepth(root.right))+1
 
-    def helper(self, root):
-        if root is None:
-            return float('inf')
-        if root.left is None and root.right is None:
-            return 1
-        return min(self.helper(root.left), self.helper(root.right))+1
-
+        # divide and conquer, bottom-up

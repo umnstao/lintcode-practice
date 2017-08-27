@@ -6,23 +6,26 @@ class Solution:
     def permuteUnique(self, nums):
         # write your code here
 
-        ret = []
         if nums is None:
-            return ret
-        nums.sort() #  有重复就要sort
+            return None
+        if len(nums) == 0:
+            return [[]]
+        nums.sort()
+        ret = []
         used = [False]*len(nums)
-        self.helper(nums, [], 0, ret, used)
+        self.helper(nums, ret, [],used)
         return ret
-
-    def helper(self, nums, path, k, ret, used):
+    def helper(self, nums, ret, path,used):
         if len(path) == len(nums):
             ret.append(path[:])
         for i in range(len(nums)):
             if used[i]:
                 continue
-            if used[i-1] is False and i!= k and nums[i] == nums[i-1]:
+            if i > 0 and nums[i] == nums[i-1] and used[i-1] == False:
                 continue
+            path+=[nums[i]]
             used[i] = True
-            self.helper(nums, path +[nums[i]], 0, ret, used)
+            self.helper(nums,ret,path,used)
             used[i] = False
-
+            path.pop()
+    # 这里used[i-1] == False 更好理解，和之前一样但之前那个没有用的话这个就应该skip

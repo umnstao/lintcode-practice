@@ -27,3 +27,4 @@ class Solution:
 
         if root.right:
             self.helper(root.right,ret,path+[root.right.val],target,sums+root.right.val)
+    # traversal

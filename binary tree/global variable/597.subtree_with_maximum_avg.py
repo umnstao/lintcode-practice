@@ -27,3 +27,5 @@ class Solution:
             self.maxAvg = localAvg
             self.maxRoot = root
         return localSum, localNum
+
+        # divide and conquer, bottom-up

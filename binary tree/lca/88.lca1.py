@@ -30,5 +30,7 @@ class Solution:
             return lcaRight
         return None
 
+        # divide and conquer, bottom-up
+
 
 
