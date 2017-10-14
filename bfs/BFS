@@ -1,0 +1,10 @@
+BFS
+
+Tree: 无脑加subtree，都没访问过
+Matrix: 上下左右，然后check他的值是否满足条件，0，1，2，。。
+Graph: 建立一个HashSet可以是LIST或DICT，判断是否访问过
+
+加一个for循环求size：
+matrix：计算时间，步数
+tree： level order
+graph：距离，时间
