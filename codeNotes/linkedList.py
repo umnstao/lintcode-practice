@@ -1,0 +1,1 @@
+# This is to summarize all important codes about linked list.
