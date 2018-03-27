@@ -14,3 +14,6 @@ class Solution:
             if len(minheap) > k:
                 heapq.heappop(minheap)
         return sorted(minheap, reverse=True)
+
+        #O( n*logk + k ）
+        #O(k + (n-k) * logk + k log k) = O(k + nlogk)
